@@ -202,17 +202,65 @@
 
     <repositories>
         <repository>
+            <id>central</id>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>apache-snapshots</id>
+            <url>https://maven.aliyun.com/repository/apache-snapshots</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- Fix org.hyperic.sigar-dist missing, disable snapshot -->
+        <repository>
+            <id>mulesoft</id>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- Disable apache-snapshots -->
+        <!-- <repository>
             <id>${repoOrgId}</id>
             <name>${repoOrgName}</name>
             <url>${repoOrgUrl}</url>
-        </repository>
+        </repository> -->
 
         <!-- Only used by core, but moved to root for parallel build dependency resolution -->
-        <repository>
+        <!-- <repository>
           <id>sigar</id>
           <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads/</url>
-        </repository>
+        </repository> -->
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
